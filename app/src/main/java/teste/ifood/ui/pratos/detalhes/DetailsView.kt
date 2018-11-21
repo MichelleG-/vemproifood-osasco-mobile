@@ -1,5 +1,8 @@
 package teste.ifood.ui.pratos.detalhes
 
-interface DetailsView{
+import teste.ifood.ui.base.BaseView
 
+interface DetailsView : BaseView
+{
+    fun initMap()
 }
