@@ -3,4 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string name="error_default">Sistema temporariamente indisponível, por favor tente mais tarde.</string>
+    <string name="error_without_connection">Ops! Verifique a sua conexão com a internet.</string>
 </resources>
