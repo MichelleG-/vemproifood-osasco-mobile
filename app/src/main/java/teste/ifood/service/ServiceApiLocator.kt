@@ -6,8 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import teste.ifood.constant.ServiceConstant
 import java.util.concurrent.TimeUnit
 
-class ServiceApiLocator
-{
+class ServiceApiLocator {
     private val serviceAPILocator: ServiceApiLocator? = null
 
     fun getInstance(): ServiceApiLocator
@@ -24,8 +23,7 @@ class ServiceApiLocator
         return this.lookup(serviceAPI, ServiceConstant.URL_DEFAULT)
     }
 
-    fun <T> lookup(serviceAPI: Class<T>, url: String): T
-    {
+    fun <T> lookup(serviceAPI: Class<T>, url: String): T {
         val builder = OkHttpClient.Builder()
         builder.connectTimeout(60, TimeUnit.SECONDS)
         builder.readTimeout(60, TimeUnit.SECONDS)
