@@ -10,11 +10,12 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import teste.ifood.CallbackSync
 import teste.ifood.R
+import teste.ifood.model.Restaurante
 import teste.ifood.to.ResponseTO
+import teste.ifood.ui.base.BaseActivity
 
-class DetailsActivity : AppCompatActivity(), OnMapReadyCallback
+class DetailsActivity : BaseActivity(), OnMapReadyCallback, CallbackSync<Restaurante>
 {
-
     private lateinit var mMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?)
@@ -23,16 +24,21 @@ class DetailsActivity : AppCompatActivity(), OnMapReadyCallback
         setContentView(R.layout.map_activity)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
-                .findFragmentById(R.id.map) as SupportMapFragment
+            .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
 
-    override fun onMapReady(googleMap: GoogleMap) {
+    override fun onMapReady(googleMap: GoogleMap)
+    {
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
         val sydney = LatLng(-34.0, 151.0)
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+    }
+
+    override fun onSuccess(result: ResponseTO<Restaurante>)
+    {
     }
 }
