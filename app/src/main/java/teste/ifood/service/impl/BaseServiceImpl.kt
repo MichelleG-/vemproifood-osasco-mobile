@@ -1,6 +1,5 @@
 package teste.ifood.service.impl
 
-open class BaseServiceImpl
-{
+open class BaseServiceImpl {
 
 }
