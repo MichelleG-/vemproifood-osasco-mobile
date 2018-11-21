@@ -8,13 +8,17 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import teste.ifood.CallbackSync
 import teste.ifood.R
+import teste.ifood.to.ResponseTO
 
-class DetailsActivity : AppCompatActivity(), OnMapReadyCallback {
+class DetailsActivity : AppCompatActivity(), OnMapReadyCallback
+{
 
     private lateinit var mMap: GoogleMap
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.map_activity)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
