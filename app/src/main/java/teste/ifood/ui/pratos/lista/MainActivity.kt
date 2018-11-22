@@ -1,11 +1,13 @@
 package teste.ifood.ui.pratos.lista
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import teste.ifood.R
 import teste.ifood.model.DishesModel
+import teste.ifood.ui.pratos.detalhes.DetailsActivity
 
 class MainActivity : AppCompatActivity(), DishesAdapter.DishesListAdapterListener {
 
@@ -24,19 +26,26 @@ class MainActivity : AppCompatActivity(), DishesAdapter.DishesListAdapterListene
     }
 
     private fun createArrayListDishes(): DishesModel {
-        return DishesModel(arrayListOf("Macarronada",
-            "Sopa de bicho da seda",
-            "lamen",
-            "esfiha",
-            "lanches",
-            "hamburguer",
-            "Sopa de bicho da seda",
-            "lamen",
-            "esfiha",
-            "lanches",
-            "hamburguer"))
+        return DishesModel(
+            arrayListOf(
+                "Macarronada",
+                "Sopa de bicho da seda",
+                "lamen",
+                "esfiha",
+                "lanches",
+                "hamburguer",
+                "Sopa de bicho da seda",
+                "lamen",
+                "esfiha",
+                "lanches",
+                "hamburguer"
+            )
+        )
     }
 
     override fun onCardClicked(string: String) {
+        val intent = Intent(this, DetailsActivity::class.java)
+        intent.putExtra("dish_name",string)
+        startActivity(intent)
     }
 }
